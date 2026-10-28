@@ -1,1 +1,5 @@
-
+AI vs. Rules: AI handles raw document extraction and human-readable reasoning generation. Deterministic rules handle security filtering, pass/fail gating, and mathematical score calculation to ensure 100% accuracy and zero hallucination risks on math.   
+Consistency & Explainability: Scores are computed via fixed code formulas, making ranking 100% repeatable. Reviewers can view exact breakdown attributes alongside generated reasoning.   
+Human in the Loop: Humans review flagged proposals, confirm final ranks, and trigger the official award. All actions, overrides, and raw model outputs are saved in database audit logs.   
+Changing Criteria: Raw extraction data is stored in JSON format. If an admin changes criteria weights, the backend re-runs the mathematical scoring code without needing to re-process PDFs via AI.   
+Risks: Addresses prompt injection (Proposal C) via text sanitization, missing fields (Proposal D) via code validation, and invalid licences (Proposal B) via strict rule-gating.   
